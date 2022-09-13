@@ -113,6 +113,14 @@ def get_max_salary(path):
 
 
 def get_min_salary(path):
+    data_jobs = read(path)
+    min_salary_list = []
+    for job in data_jobs:
+        if job['min_salary'] not in min_salary_list:
+            if job['min_salary'] != '' and job['min_salary'].isdigit():
+                min_salary_list.append(int(job['min_salary']))
+                min_salary = min(min_salary_list)
+    return min_salary
     """Get the minimum salary of all jobs
 
     Must call `read`
