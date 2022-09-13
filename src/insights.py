@@ -87,6 +87,14 @@ def filter_by_industry(jobs, industry):
 
 
 def get_max_salary(path):
+    data_jobs = read(path)
+    max_salary_list = []
+    for job in data_jobs:
+        if job['max_salary'] not in max_salary_list:
+            if job['max_salary'] != '' and job['max_salary'].isdigit():
+                max_salary_list.append(int(job['max_salary']))
+                max_salary = max(max_salary_list)
+    return max_salary
     """Get the maximum salary of all jobs
 
     Must call `read`
