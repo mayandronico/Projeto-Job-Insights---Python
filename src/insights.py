@@ -72,7 +72,12 @@ def filter_by_job_type(jobs: list, job_type: str):
     """
 
 
-def filter_by_industry(jobs, industry):
+def filter_by_industry(jobs: list, industry: str):
+    result = []
+    for job in jobs:
+        if job['industry'] == industry:
+            result.append(job)
+    return result
     """Filters a list of jobs by industry
 
     Parameters
@@ -87,7 +92,6 @@ def filter_by_industry(jobs, industry):
     list
         List of jobs with provided industry
     """
-    return []
 
 
 def get_max_salary(path):
@@ -113,7 +117,6 @@ def get_max_salary(path):
     int
         The maximum salary paid out of all job opportunities
     """
-    pass
 
 
 def get_min_salary(path):
@@ -139,7 +142,6 @@ def get_min_salary(path):
     int
         The minimum salary paid out of all job opportunities
     """
-    pass
 
 
 def matches_salary_range(job, salary):
