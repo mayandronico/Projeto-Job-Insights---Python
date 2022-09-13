@@ -4,8 +4,8 @@ import csv
 
 @lru_cache
 def read(path: str):
-    with open(path) as csv_file:
-        dict_list = csv.DictReader(csv_file)
+    with open(path, encoding='UTF-8') as csv_file:
+        dict_list = csv.DictReader(csv_file, delimiter=',')
         list_jobs = list(dict_list)
     return list_jobs
     """Reads a file from a given path and returns its contents
