@@ -206,4 +206,3 @@ def filter_by_salary_range(jobs: list, salary: int):
     list
         Jobs whose salary range contains `salary`
     """
-    
