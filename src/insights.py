@@ -1,7 +1,7 @@
 from src.jobs import read
 
 
-def get_unique_job_types(path: str):
+def get_unique_job_types(path):
     data_jobs = read(path)
     unique_job_types = []
     for job in data_jobs:
@@ -50,7 +50,7 @@ def get_unique_industries(path):
     """
 
 
-def filter_by_job_type(jobs: list, job_type: str):
+def filter_by_job_type(jobs, job_type):
     result = []
     for job in jobs:
         if job['job_type'] == job_type:
@@ -72,7 +72,7 @@ def filter_by_job_type(jobs: list, job_type: str):
     """
 
 
-def filter_by_industry(jobs: list, industry: str):
+def filter_by_industry(jobs, industry):
     result = []
     for job in jobs:
         if job['industry'] == industry:
@@ -144,7 +144,7 @@ def get_min_salary(path):
     """
 
 
-def matches_salary_range(job: dict, salary: int):
+def matches_salary_range(job, salary):
     if (
         'min_salary' in job and
         'max_salary' in job and
@@ -181,7 +181,7 @@ def matches_salary_range(job: dict, salary: int):
     pass
 
 
-def filter_by_salary_range(jobs: list, salary: int):
+def filter_by_salary_range(jobs, salary):
     result = []
     for job in jobs:
         try:

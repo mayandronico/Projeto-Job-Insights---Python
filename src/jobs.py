@@ -3,7 +3,7 @@ import csv
 
 
 @lru_cache
-def read(path: str):
+def read(path):
     with open(path, encoding='UTF-8') as csv_file:
         dict_list = csv.DictReader(csv_file, delimiter=',')
         list_jobs = list(dict_list)
